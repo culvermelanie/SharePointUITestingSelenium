@@ -1,0 +1,30 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
+  "id": "e469ae6b-1f60-421f-ab9a-2f6de5bef230",
+  "alias": "BrickheadzWebPart",
+  "componentType": "WebPart",
+  "version": "*",
+  "manifestVersion": 2,
+  "requiresCustomScript": false,
+  "supportedHosts": [
+    "SharePointWebPart"
+  ],
+  "preconfiguredEntries": [
+    {
+      "groupId": "5c03119e-3074-46fd-976b-c60198311f70",
+      "group": {
+        "default": "Other"
+      },
+      "title": {
+        "default": "Brickheadz"
+      },
+      "description": {
+        "default": "Brickheadz description"
+      },
+      "iconImageUrl": "data:image/png;base64,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",
+      "properties": {
+        "description": "Brickheadz"
+      }
+    }
+  ]
+}

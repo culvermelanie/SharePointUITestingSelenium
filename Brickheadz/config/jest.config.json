@@ -1,0 +1,36 @@
+{
+  "preset": "@voitanos/jest-preset-spfx-react16",
+  "rootDir": "../src",
+  "testPathIgnorePatterns": [
+    "cypress"
+  ],
+  "coveragePathIgnorePatterns": [
+    "./src/assetsTransformer.js",
+    "node_modules"
+  ],
+  "globals": {
+    "ts-jest": {
+      "diagnostics": {
+        "ignoreCodes": "TS1192"
+      }
+    }
+  },
+  "moduleNameMapper": {
+    "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/assetsTransformer.js"
+  },
+  "collectCoverage": true,
+  "coverageReporters": [
+    "cobertura",
+    "html",
+    "lcov"
+  ],
+  "reporters": [
+    "default",
+    [
+      "jest-junit", {
+        "outputDirectory": "./reports/",
+        "outputName": "./junit.xml"
+      }
+    ]
+  ]
+}

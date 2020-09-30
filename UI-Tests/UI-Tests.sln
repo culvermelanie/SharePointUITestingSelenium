@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI-Tests", "UI-Tests\UI-Tests.csproj", "{A2FE78C1-F857-4839-846A-50C08C04A1AB}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Brickheadz", "..\Brickheadz\", "{CD972A6E-7F39-4CA8-94CB-F39B53629256}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_53474"
+		Debug.AspNetCompiler.PhysicalPath = "..\Brickheadz\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53474\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_53474"
+		Release.AspNetCompiler.PhysicalPath = "..\Brickheadz\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53474\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "53474"
+		SlnRelativePath = "..\Brickheadz\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A2FE78C1-F857-4839-846A-50C08C04A1AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2FE78C1-F857-4839-846A-50C08C04A1AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2FE78C1-F857-4839-846A-50C08C04A1AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2FE78C1-F857-4839-846A-50C08C04A1AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD972A6E-7F39-4CA8-94CB-F39B53629256}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD972A6E-7F39-4CA8-94CB-F39B53629256}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4BB6FDFA-93C0-4DBE-B69E-7539E36B1342}
+	EndGlobalSection
+EndGlobal

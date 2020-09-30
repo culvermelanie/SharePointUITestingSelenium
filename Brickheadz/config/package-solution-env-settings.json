@@ -1,0 +1,46 @@
+{
+  "environments": [
+    {
+      "environment": "default",
+      "id": "17fd639b-da7c-42e3-bde4-6d33eb083abf",
+      "name": "ecs-2019-pnp-client-side-solution",
+      "zip": "solution/ecs-2019-pnp.sppkg",
+      "cdn": "<!-- PATH TO CDN -->",
+      "entries": [
+        {
+          "id": "26cb4af3-7f48-4737-b82a-4e24167c2d08",
+          "location": "./src/webparts/tiles/TilesWebPart.manifest.json"
+        },
+        {
+          "id": "e469ae6b-1f60-421f-ab9a-2f6de5bef230",
+          "location": "./src/webparts/brickheadz/BrickheadzWebPart.manifest.json"
+        },
+        {
+          "id": "0f1e52fa-fd5e-4d53-9322-82140e984b22",
+          "location": "./src/extensions/helloWorld/HelloWorldApplicationCustomizer.manifest.json"
+        }
+      ]
+    },
+    {
+      "environment": "v2",
+      "id": "09212274-b5f8-4b73-90c1-515419c26f30",
+      "name": "ecs-2019-pnp-client-side-solution-v2",
+      "zip": "solution/ecs-2019-pnp-v2.sppkg",
+      "cdn": "<!-- PATH TO CDN -->",
+      "entries": [
+        {
+          "id": "85ce3715-2e4f-4ef8-b1a2-f579f41f0beb",
+          "location": "./src/webparts/tiles/TilesWebPart.manifest.json"
+        },
+        {
+          "id": "dd66b9d9-0a4c-4f7c-b8be-85ca49bfaf32",
+          "location": "./src/webparts/brickheadz/BrickheadzWebPart.manifest.json"
+        },
+        {
+          "id": "125f20e2-b0d8-4ecf-883e-e5cc59e5acde",
+          "location": "./src/extensions/helloWorld/HelloWorldApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  ]
+}

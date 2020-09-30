@@ -1,0 +1,85 @@
+# .NET Desktop
+# Build and run tests for .NET Desktop or Windows classic desktop solutions.
+# Add steps that publish symbols, save build artifacts, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/apps/windows/dot-net
+
+name: $(Year:yy).$(DayOfYear)$(rev:r)
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+  solution.version: '1.0.'
+
+steps:
+- task: NuGetToolInstaller@1
+
+- task: NuGetCommand@2
+  inputs:
+    restoreSolution: '$(solution)'
+
+- task: VSBuild@1
+  inputs:
+    solution: '$(solution)'
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+
+
+- task: VersionJSONFile@2
+  displayName: 'Update SPFx Package version number '
+  inputs:
+    Path: '$(Build.SourcesDirectory)/Brickheadz/config'
+    VersionNumber: '$(solution.version)$(Build.BuildNumber)'
+    useBuildNumberDirectly: false
+    versionForJSONFileFormat: '{1}.{2}.{3}.{4}'
+    FilenamePattern: 'package-solution.json'
+
+
+- task: UseNode@1
+  displayName: 'Use Node 10.x'
+
+- task: Npm@1
+  displayName: 'npm install'
+  inputs:
+    workingDir: 'Brickheadz'
+    verbose: false
+
+- task: Gulp@0
+  displayName: 'gulp bundle'
+  inputs:
+    gulpFile: 'Brickheadz/gulpfile.js'
+    targets: bundle
+    arguments: '--ship'
+
+- task: Gulp@0
+  displayName: 'gulp package-solution'
+  inputs:
+    gulpFile: 'Brickheadz/gulpfile.js'
+    targets: 'package-solution'
+    arguments: '--ship'
+
+- task: PublishSymbols@2
+  displayName: 'Publish symbols path'
+  inputs:
+    SearchPattern: '**\bin\**\*.pdb'
+    PublishSymbols: false
+  continueOnError: true
+
+- task: CopyFiles@2
+  displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
+  inputs:
+    SourceFolder: '$(system.defaultworkingdirectory)'
+    Contents: |
+     **\bin\$(BuildConfiguration)\**
+     **\*.sppkg
+    TargetFolder: '$(build.artifactstagingdirectory)'
+  condition: succeededOrFailed()
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
+  inputs:
+    PathtoPublish: '$(build.artifactstagingdirectory)'
+  condition: succeededOrFailed()
